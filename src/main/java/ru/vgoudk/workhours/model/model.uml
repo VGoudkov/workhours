@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>ru.vgoudk.workhours.model.employment.AbstractEmploymentPeriod</OriginalElement>
+  <nodes>
+    <node x="658.8673469387754" y="215.0">ru.vgoudk.workhours.model.personnel.Employee</node>
+    <node x="1050.4455782312925" y="619.0">ru.vgoudk.workhours.model.worklog.MonthlyWorkDays</node>
+    <node x="411.8673469387754" y="226.0">ru.vgoudk.workhours.model.employment.AbstractEmploymentPeriod</node>
+    <node x="10.5" y="249.5">ru.vgoudk.workhours.model.finance.Funds</node>
+    <node x="1048.987244897959" y="130.0">ru.vgoudk.workhours.model.finance.Status</node>
+    <node x="455.3673469387754" y="0.0">ru.vgoudk.workhours.model.AbstractEntity</node>
+    <node x="820.4851190476193" y="449.0">ru.vgoudk.workhours.model.personnel.FillingGroup</node>
+    <node x="184.81079931972812" y="130.0">ru.vgoudk.workhours.model.finance.Division</node>
+    <node x="190.0191326530615" y="619.0">ru.vgoudk.workhours.model.worklog.MonthlyWorkShifts</node>
+    <node x="34.36011904761938" y="438.0">ru.vgoudk.workhours.model.finance.Increase</node>
+    <node x="620.2372448979592" y="460.0">ru.vgoudk.workhours.model.employment.SalaryIncrease</node>
+    <node x="821.8673469387754" y="226.0">ru.vgoudk.workhours.model.personnel.FillingResponsible</node>
+    <node x="299.8673469387754" y="249.5">ru.vgoudk.workhours.model.personnel.Status</node>
+    <node x="257.2351190476193" y="427.0">ru.vgoudk.workhours.model.employment.Employment</node>
+    <node x="1077.4851190476193" y="449.0">ru.vgoudk.workhours.model.worklog.AbstractMonthlyWork</node>
+    <node x="131.86734693877543" y="226.0">ru.vgoudk.workhours.model.finance.Position</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="ru.vgoudk.workhours.model.personnel.FillingGroup" target="ru.vgoudk.workhours.model.personnel.FillingResponsible" relationship="TO_ONE">
+      <point x="-79.0" y="-39.0" />
+      <point x="859.9851190476193" y="406.0" />
+      <point x="909.2351190476193" y="406.0" />
+      <point x="909.2351190476193" y="356.0" />
+      <point x="867.6173469387754" y="356.0" />
+      <point x="-45.75" y="39.0" />
+    </edge>
+    <edge source="ru.vgoudk.workhours.model.worklog.AbstractMonthlyWork" target="ru.vgoudk.workhours.model.AbstractEntity" relationship="GENERALIZATION">
+      <point x="0.0" y="-39.0" />
+      <point x="1173.4851190476193" y="104.0" />
+      <point x="525.3673469387754" y="104.0" />
+      <point x="0.0" y="39.0" />
+    </edge>
+    <edge source="ru.vgoudk.workhours.model.finance.Increase" target="ru.vgoudk.workhours.model.AbstractEntity" relationship="GENERALIZATION">
+      <point x="-51.33333333333337" y="-50.0" />
+      <point x="60.02678571428601" y="406.0" />
+      <point x="0.0" y="406.0" />
+      <point x="0.0" y="104.0" />
+      <point x="525.3673469387754" y="104.0" />
+      <point x="0.0" y="39.0" />
+    </edge>
+    <edge source="ru.vgoudk.workhours.model.worklog.MonthlyWorkShifts" target="ru.vgoudk.workhours.model.employment.Employment" relationship="TO_ONE">
+      <point x="0.0" y="-39.0" />
+      <point x="282.0191326530615" y="589.0" />
+      <point x="356.7351190476193" y="589.0" />
+      <point x="356.7351190476193" y="569.0" />
+      <point x="398.9851190476193" y="569.0" />
+      <point x="47.25" y="61.0" />
+    </edge>
+    <edge source="ru.vgoudk.workhours.model.personnel.FillingGroup" target="ru.vgoudk.workhours.model.AbstractEntity" relationship="GENERALIZATION">
+      <point x="79.0" y="-39.0" />
+      <point x="1017.9851190476193" y="406.0" />
+      <point x="1026.6024659863947" y="406.0" />
+      <point x="1026.6024659863947" y="104.0" />
+      <point x="525.3673469387754" y="104.0" />
+      <point x="0.0" y="39.0" />
+    </edge>
+    <edge source="ru.vgoudk.workhours.model.finance.Increase" target="ru.vgoudk.workhours.model.finance.Position" relationship="TO_ONE">
+      <point x="51.33333333333326" y="-50.0" />
+      <point x="162.69345238095264" y="406.0" />
+      <point x="149.11011904761932" y="406.0" />
+      <point x="149.11011904761932" y="396.0" />
+      <point x="211.73511904761932" y="396.0" />
+      <point x="211.73511904761932" y="346.0" />
+      <point x="242.86734693877543" y="346.0" />
+      <point x="37.0" y="39.0" />
+    </edge>
+    <edge source="ru.vgoudk.workhours.model.employment.Employment" target="ru.vgoudk.workhours.model.personnel.Status" relationship="TO_ONE">
+      <point x="0.0" y="-61.0" />
+      <point x="351.7351190476193" y="366.0" />
+      <point x="368.8673469387754" y="366.0" />
+      <point x="23.0" y="15.5" />
+    </edge>
+    <edge source="ru.vgoudk.workhours.model.employment.SalaryIncrease" target="ru.vgoudk.workhours.model.personnel.Employee" relationship="DEPENDENCY">
+      <point x="56.0" y="-28.0" />
+      <point x="760.2372448979592" y="386.0" />
+      <point x="736.2351190476193" y="386.0" />
+      <point x="736.2351190476193" y="336.0" />
+      <point x="766.1173469387754" y="336.0" />
+      <point x="35.75" y="50.0" />
+    </edge>
+    <edge source="ru.vgoudk.workhours.model.personnel.Employee" target="ru.vgoudk.workhours.model.AbstractEntity" relationship="GENERALIZATION">
+      <point x="0.0" y="-50.0" />
+      <point x="730.3673469387754" y="104.0" />
+      <point x="525.3673469387754" y="104.0" />
+      <point x="0.0" y="39.0" />
+    </edge>
+    <edge source="ru.vgoudk.workhours.model.employment.Employment" target="ru.vgoudk.workhours.model.personnel.Status" relationship="DEPENDENCY">
+      <point x="-63.0" y="-61.0" />
+      <point x="288.7351190476193" y="406.0" />
+      <point x="341.7351190476193" y="406.0" />
+      <point x="341.7351190476193" y="366.0" />
+      <point x="322.8673469387754" y="366.0" />
+      <point x="-23.0" y="15.5" />
+    </edge>
+    <edge source="ru.vgoudk.workhours.model.employment.Employment" target="ru.vgoudk.workhours.model.personnel.Employee" relationship="TO_ONE">
+      <point x="0.0" y="-61.0" />
+      <point x="351.7351190476193" y="376.0" />
+      <point x="716.4851190476193" y="376.0" />
+      <point x="716.4851190476193" y="356.0" />
+      <point x="694.6173469387754" y="356.0" />
+      <point x="-35.75" y="50.0" />
+    </edge>
+    <edge source="ru.vgoudk.workhours.model.employment.AbstractEmploymentPeriod" target="ru.vgoudk.workhours.model.AbstractEntity" relationship="GENERALIZATION">
+      <point x="0.0" y="-39.0" />
+      <point x="0.0" y="39.0" />
+    </edge>
+    <edge source="ru.vgoudk.workhours.model.employment.SalaryIncrease" target="ru.vgoudk.workhours.model.employment.AbstractEmploymentPeriod" relationship="GENERALIZATION">
+      <point x="-56.0" y="-28.0" />
+      <point x="648.2372448979592" y="406.0" />
+      <point x="525.3673469387754" y="406.0" />
+      <point x="0.0" y="39.0" />
+    </edge>
+    <edge source="ru.vgoudk.workhours.model.worklog.MonthlyWorkDays" target="ru.vgoudk.workhours.model.worklog.AbstractMonthlyWork" relationship="GENERALIZATION">
+      <point x="61.33333333333337" y="-39.0" />
+      <point x="1203.7789115646258" y="579.0" />
+      <point x="1173.4851190476193" y="579.0" />
+      <point x="0.0" y="39.0" />
+    </edge>
+    <edge source="ru.vgoudk.workhours.model.finance.Increase" target="ru.vgoudk.workhours.model.finance.Funds" relationship="DEPENDENCY">
+      <point x="0.0" y="-50.0" />
+      <point x="111.36011904761932" y="376.0" />
+      <point x="33.25" y="376.0" />
+      <point x="-22.75" y="15.5" />
+    </edge>
+    <edge source="ru.vgoudk.workhours.model.finance.Status" target="ru.vgoudk.workhours.model.AbstractEntity" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="1094.987244897959" y="104.0" />
+      <point x="525.3673469387754" y="104.0" />
+      <point x="0.0" y="39.0" />
+    </edge>
+    <edge source="ru.vgoudk.workhours.model.finance.Funds" target="ru.vgoudk.workhours.model.AbstractEntity" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="56.0" y="104.0" />
+      <point x="525.3673469387754" y="104.0" />
+      <point x="0.0" y="39.0" />
+    </edge>
+    <edge source="ru.vgoudk.workhours.model.worklog.MonthlyWorkShifts" target="ru.vgoudk.workhours.model.employment.Employment" relationship="DEPENDENCY">
+      <point x="-61.33333333333337" y="-39.0" />
+      <point x="220.68579931972812" y="599.0" />
+      <point x="346.7351190476193" y="599.0" />
+      <point x="346.7351190476193" y="569.0" />
+      <point x="304.4851190476193" y="569.0" />
+      <point x="-47.25" y="61.0" />
+    </edge>
+    <edge source="ru.vgoudk.workhours.model.personnel.FillingResponsible" target="ru.vgoudk.workhours.model.AbstractEntity" relationship="GENERALIZATION">
+      <point x="0.0" y="-39.0" />
+      <point x="913.3673469387754" y="104.0" />
+      <point x="525.3673469387754" y="104.0" />
+      <point x="0.0" y="39.0" />
+    </edge>
+    <edge source="ru.vgoudk.workhours.model.personnel.FillingGroup" target="ru.vgoudk.workhours.model.personnel.Employee" relationship="TO_ONE">
+      <point x="-79.0" y="-39.0" />
+      <point x="859.9851190476193" y="406.0" />
+      <point x="909.2351190476193" y="406.0" />
+      <point x="909.2351190476193" y="366.0" />
+      <point x="716.4851190476193" y="366.0" />
+      <point x="716.4851190476193" y="356.0" />
+      <point x="694.6173469387754" y="356.0" />
+      <point x="-35.75" y="50.0" />
+    </edge>
+    <edge source="ru.vgoudk.workhours.model.personnel.FillingGroup" target="ru.vgoudk.workhours.model.personnel.FillingResponsible" relationship="DEPENDENCY">
+      <point x="0.0" y="-39.0" />
+      <point x="938.9851190476193" y="406.0" />
+      <point x="959.1173469387754" y="406.0" />
+      <point x="45.75" y="39.0" />
+    </edge>
+    <edge source="ru.vgoudk.workhours.model.worklog.MonthlyWorkDays" target="ru.vgoudk.workhours.model.employment.Employment" relationship="DEPENDENCY">
+      <point x="-61.33333333333337" y="-39.0" />
+      <point x="1081.112244897959" y="599.0" />
+      <point x="346.7351190476193" y="599.0" />
+      <point x="346.7351190476193" y="569.0" />
+      <point x="304.4851190476193" y="569.0" />
+      <point x="-47.25" y="61.0" />
+    </edge>
+    <edge source="ru.vgoudk.workhours.model.finance.Increase" target="ru.vgoudk.workhours.model.finance.Position" relationship="DEPENDENCY">
+      <point x="0.0" y="-50.0" />
+      <point x="111.36011904761932" y="386.0" />
+      <point x="180.1024659863948" y="386.0" />
+      <point x="180.1024659863948" y="366.0" />
+      <point x="168.86734693877543" y="366.0" />
+      <point x="-37.0" y="39.0" />
+    </edge>
+    <edge source="ru.vgoudk.workhours.model.employment.SalaryIncrease" target="ru.vgoudk.workhours.model.personnel.Employee" relationship="TO_ONE">
+      <point x="0.0" y="-28.0" />
+      <point x="704.2372448979592" y="386.0" />
+      <point x="716.4851190476193" y="386.0" />
+      <point x="716.4851190476193" y="356.0" />
+      <point x="694.6173469387754" y="356.0" />
+      <point x="-35.75" y="50.0" />
+    </edge>
+    <edge source="ru.vgoudk.workhours.model.personnel.FillingGroup" target="ru.vgoudk.workhours.model.personnel.Employee" relationship="DEPENDENCY">
+      <point x="0.0" y="-39.0" />
+      <point x="938.9851190476193" y="346.0" />
+      <point x="736.2351190476193" y="346.0" />
+      <point x="736.2351190476193" y="336.0" />
+      <point x="766.1173469387754" y="336.0" />
+      <point x="35.75" y="50.0" />
+    </edge>
+    <edge source="ru.vgoudk.workhours.model.finance.Position" target="ru.vgoudk.workhours.model.AbstractEntity" relationship="GENERALIZATION">
+      <point x="-49.33333333333337" y="-39.0" />
+      <point x="156.53401360544206" y="188.0" />
+      <point x="161.99234693877543" y="188.0" />
+      <point x="161.99234693877543" y="104.0" />
+      <point x="525.3673469387754" y="104.0" />
+      <point x="0.0" y="39.0" />
+    </edge>
+    <edge source="ru.vgoudk.workhours.model.finance.Increase" target="ru.vgoudk.workhours.model.finance.Funds" relationship="TO_ONE">
+      <point x="51.33333333333326" y="-50.0" />
+      <point x="162.69345238095264" y="406.0" />
+      <point x="149.11011904761932" y="406.0" />
+      <point x="149.11011904761932" y="366.0" />
+      <point x="78.75" y="366.0" />
+      <point x="22.75" y="15.5" />
+    </edge>
+    <edge source="ru.vgoudk.workhours.model.worklog.MonthlyWorkDays" target="ru.vgoudk.workhours.model.employment.Employment" relationship="TO_ONE">
+      <point x="0.0" y="-39.0" />
+      <point x="1142.4455782312925" y="589.0" />
+      <point x="356.7351190476193" y="589.0" />
+      <point x="356.7351190476193" y="569.0" />
+      <point x="398.9851190476193" y="569.0" />
+      <point x="47.25" y="61.0" />
+    </edge>
+    <edge source="ru.vgoudk.workhours.model.personnel.Status" target="ru.vgoudk.workhours.model.AbstractEntity" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="345.8673469387754" y="104.0" />
+      <point x="525.3673469387754" y="104.0" />
+      <point x="0.0" y="39.0" />
+    </edge>
+    <edge source="ru.vgoudk.workhours.model.worklog.MonthlyWorkShifts" target="ru.vgoudk.workhours.model.worklog.AbstractMonthlyWork" relationship="GENERALIZATION">
+      <point x="61.33333333333337" y="-39.0" />
+      <point x="343.35246598639486" y="579.0" />
+      <point x="1173.4851190476193" y="579.0" />
+      <point x="0.0" y="39.0" />
+    </edge>
+    <edge source="ru.vgoudk.workhours.model.employment.Employment" target="ru.vgoudk.workhours.model.personnel.Employee" relationship="DEPENDENCY">
+      <point x="-63.0" y="-61.0" />
+      <point x="288.7351190476193" y="406.0" />
+      <point x="341.7351190476193" y="406.0" />
+      <point x="341.7351190476193" y="396.0" />
+      <point x="736.2351190476193" y="396.0" />
+      <point x="736.2351190476193" y="336.0" />
+      <point x="766.1173469387754" y="336.0" />
+      <point x="35.75" y="50.0" />
+    </edge>
+    <edge source="ru.vgoudk.workhours.model.finance.Position" target="ru.vgoudk.workhours.model.finance.Division" relationship="DEPENDENCY">
+      <point x="49.33333333333337" y="-39.0" />
+      <point x="255.2006802721088" y="188.0" />
+      <point x="262.0607993197281" y="188.0" />
+      <point x="25.75" y="15.5" />
+    </edge>
+    <edge source="ru.vgoudk.workhours.model.finance.Position" target="ru.vgoudk.workhours.model.finance.Division" relationship="TO_ONE">
+      <point x="0.0" y="-39.0" />
+      <point x="205.86734693877543" y="188.0" />
+      <point x="210.56079931972812" y="188.0" />
+      <point x="-25.75" y="15.5" />
+    </edge>
+    <edge source="ru.vgoudk.workhours.model.finance.Division" target="ru.vgoudk.workhours.model.AbstractEntity" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="236.31079931972812" y="104.0" />
+      <point x="525.3673469387754" y="104.0" />
+      <point x="0.0" y="39.0" />
+    </edge>
+    <edge source="ru.vgoudk.workhours.model.employment.Employment" target="ru.vgoudk.workhours.model.employment.AbstractEmploymentPeriod" relationship="GENERALIZATION">
+      <point x="63.0" y="-61.0" />
+      <point x="414.7351190476193" y="406.0" />
+      <point x="525.3673469387754" y="406.0" />
+      <point x="0.0" y="39.0" />
+    </edge>
+    <edge source="ru.vgoudk.workhours.model.employment.Employment" target="ru.vgoudk.workhours.model.finance.Position" relationship="DEPENDENCY">
+      <point x="-63.0" y="-61.0" />
+      <point x="288.7351190476193" y="406.0" />
+      <point x="341.7351190476193" y="406.0" />
+      <point x="341.7351190476193" y="376.0" />
+      <point x="180.1024659863948" y="376.0" />
+      <point x="180.1024659863948" y="366.0" />
+      <point x="168.86734693877543" y="366.0" />
+      <point x="-37.0" y="39.0" />
+    </edge>
+    <edge source="ru.vgoudk.workhours.model.employment.Employment" target="ru.vgoudk.workhours.model.finance.Position" relationship="TO_ONE">
+      <point x="0.0" y="-61.0" />
+      <point x="351.7351190476193" y="356.0" />
+      <point x="211.73511904761932" y="356.0" />
+      <point x="211.73511904761932" y="346.0" />
+      <point x="242.86734693877543" y="346.0" />
+      <point x="37.0" y="39.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.0" showDependencies="true" x="635.0" y="348.5" />
+  <SelectedNodes>
+    <node>ru.vgoudk.workhours.model.employment.AbstractEmploymentPeriod</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
