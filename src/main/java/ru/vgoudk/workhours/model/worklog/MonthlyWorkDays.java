@@ -12,7 +12,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
- * Месячная отработка в днях
+ * Месячная отработка в днях (для расчёта зарплаты)
  */
 @Entity
 @Table(name = "wh_monthly work days")
