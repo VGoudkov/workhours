@@ -15,7 +15,7 @@ import javax.persistence.Table;
  * Месячная отработка в днях (для расчёта зарплаты)
  */
 @Entity
-@Table(name = "wh_monthly work days")
+@Table(name = "wh_monthly_workdays")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -25,7 +25,7 @@ public class MonthlyWorkDays extends AbstractMonthlyWork {
      * Отработано в должности
      */
     @ManyToOne
-    @JoinColumn(name = "employment_id")
+    @JoinColumn(name = "employment_fk")
     private Employment employment;
     /**
      * Отработано дней

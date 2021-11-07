@@ -16,7 +16,7 @@ import javax.persistence.Table;
  * </ul>
  */
 @Entity
-@Table( name = "wh_status")
+@Table(name = "wh_status")
 @NoArgsConstructor
 @SuperBuilder
 public class Status extends AbstractEntity {

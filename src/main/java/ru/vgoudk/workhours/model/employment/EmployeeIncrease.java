@@ -23,10 +23,16 @@ import javax.persistence.Table;
 @NoArgsConstructor
 @SuperBuilder
 public class EmployeeIncrease extends AbstractEmploymentPeriod {
+    /**
+     * Кому надбавка
+     */
     @ManyToOne
     @JoinColumn(name = "for_employee_fk")
     private Employee forEmployee;
 
+    /**
+     * Какая надбавка, т.е. как её рассчитывать исходя из количества отработанных смен ({@link ru.vgoudk.workhours.model.worklog.MonthlyWorkShifts}
+     */
     @ManyToOne
     @JoinColumn(name = "increase_fk")
     private Increase increase;

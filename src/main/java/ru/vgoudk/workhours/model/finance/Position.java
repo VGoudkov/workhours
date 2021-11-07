@@ -16,16 +16,22 @@ import java.math.BigDecimal;
  * Должность
  */
 @Entity
-@Table( name = "wh_position")
+@Table(name = "wh_position")
 @Getter
 @Setter
 @NoArgsConstructor
 @SuperBuilder
 public class Position extends AbstractEntity {
 
+    /**
+     * Должность в подразделении
+     */
     @ManyToOne
     @JoinColumn(name = "at_division_fk")
     private Division atDivision;
 
+    /**
+     * Месячная зарплата в этой должности
+     */
     private BigDecimal salary;
 }

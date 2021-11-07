@@ -9,14 +9,13 @@ import ru.vgoudk.workhours.model.AbstractEntity;
 import javax.persistence.Entity;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
-import javax.persistence.Table;
 import java.time.Month;
 
 /**
  * Месячная отработка, бывает разных типов
  */
 @Entity
-@Inheritance( strategy = InheritanceType.TABLE_PER_CLASS)
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @Getter
 @Setter
 @NoArgsConstructor
@@ -31,6 +30,4 @@ public abstract class AbstractMonthlyWork extends AbstractEntity {
      * Отработано в году
      */
     private Integer inYear;
-
-
 }

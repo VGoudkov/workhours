@@ -2,7 +2,6 @@ package ru.vgoudk.workhours.model.employment;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 import ru.vgoudk.workhours.model.AbstractEntity;
@@ -10,7 +9,6 @@ import ru.vgoudk.workhours.model.AbstractEntity;
 import javax.persistence.Entity;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
-import javax.persistence.Table;
 import java.time.LocalDate;
 
 /**
@@ -23,6 +21,12 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @SuperBuilder
 public abstract class AbstractEmploymentPeriod extends AbstractEntity {
-    private LocalDate from;
-    private LocalDate to;
+    /**
+     * Дата начала работы (первый день)
+     */
+    private LocalDate fromDate;
+    /**
+     * Дата окончания работы (включая)
+     */
+    private LocalDate toDate;
 }

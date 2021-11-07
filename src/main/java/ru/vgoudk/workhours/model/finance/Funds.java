@@ -11,7 +11,7 @@ import javax.persistence.Table;
  * Средства, из которых выплачивается надбавка
  */
 @Entity
-@Table( name = "wh_funds")
+@Table(name = "wh_funds")
 @NoArgsConstructor
 @SuperBuilder
 public class Funds extends AbstractEntity {

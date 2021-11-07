@@ -15,7 +15,7 @@ import javax.persistence.Table;
  * Месячная отработка в сменах (для расчёта надбавок)
  */
 @Entity
-@Table(name = "wh_monthly work shifts")
+@Table(name = "wh_monthly_workshifts")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -29,7 +29,7 @@ public class MonthlyWorkShifts extends AbstractMonthlyWork {
     private EmployeeIncrease salaryIncrease;
 
     /**
-     * Отработано смен
+     * Отработано периодов, которые заявлены в {@link ru.vgoudk.workhours.model.finance.Increase#increasePeriod}
      */
-    private Integer shifts;
+    private Integer periods;
 }

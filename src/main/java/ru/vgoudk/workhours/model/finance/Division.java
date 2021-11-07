@@ -11,7 +11,7 @@ import javax.persistence.Table;
  * Подразделение
  */
 @Entity
-@Table( name = "wh_division")
+@Table(name = "wh_division")
 @NoArgsConstructor
 @SuperBuilder
 public class Division extends AbstractEntity {

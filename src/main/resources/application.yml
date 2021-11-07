@@ -1,11 +1,11 @@
-server:
-  servlet:
-    session:
-      timeout: 30m
-  port: 8082
+#server:
+#  servlet:
+#    session:
+#      timeout: 30m
+#  port: 8082
 spring:
-  profiles:
-    active: dev
+#  profiles:
+#    active: dev
   datasource:
     url: jdbc:postgresql://localhost:5532/whmgu
     username: whmgu
@@ -17,7 +17,9 @@ spring:
 #    generate-ddl: false
     hibernate:
 #      ddl-auto: none
-      ddl-auto: update
+      ddl-auto: create
+      naming:
+        implicit-strategy: ru.vgoudk.workhours.model.HumanReadableNamingStrategy
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     properties:
       hibernate:

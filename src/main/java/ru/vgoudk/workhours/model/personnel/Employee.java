@@ -11,15 +11,24 @@ import javax.persistence.Table;
 
 /**
  * Сотрудник
-*/
+ */
 @Entity
-@Table( name = "wh_employee")
+@Table(name = "wh_employee")
 @Getter
 @Setter
 @NoArgsConstructor
 @SuperBuilder
 public class Employee extends AbstractEntity {
+    /**
+     * Фамилия
+     */
     private String lastName;
+    /**
+     * Имя
+     */
     private String firstName;
+    /**
+     * Отчество
+     */
     private String patronymic;
 }
