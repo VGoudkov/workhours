@@ -18,16 +18,16 @@ public class HumanReadableNamingStrategy extends ImplicitNamingStrategyJpaCompli
      * Для тех идентификаторов, которые будут урезаны до 63 символов, добавлять эту цифру в конце, чтобы не было
      * пересечений
      */
-    final static AtomicInteger counter = new AtomicInteger(1);
+    static final AtomicInteger counter = new AtomicInteger(1);
     /**
      * Полный список всех ключей, которые были созданы, чтобы избежать повторений
      */
-    final static Set<String> existingKeys = new HashSet<>();
+    static final Set<String> existingKeys = new HashSet<>();
 
     /**
      * Максимальная длина идентификатора для PgSQL
      */
-    final int MAX_PG_KEY_LENGTH = 63;
+    static final int MAX_PG_KEY_LENGTH = 63;
 
 
     @Override
@@ -39,11 +39,11 @@ public class HumanReadableNamingStrategy extends ImplicitNamingStrategyJpaCompli
                         "FK",
                         source.getTableName(),
                         source.getReferencedTableName(),
-                        source.getColumnNames(),
-                        source.getBuildingContext().getBuildingOptions().getSchemaCharset()
+                        source.getColumnNames()
                 ),
                 source.getBuildingContext()
         );
+        //,  source.getBuildingContext().getBuildingOptions().getSchemaCharset() - временно не используется
     }
 
 
@@ -56,16 +56,16 @@ public class HumanReadableNamingStrategy extends ImplicitNamingStrategyJpaCompli
                         "UK",
                         (source.getTableName()),
                         toIdentifier("", source.getBuildingContext()),
-                        source.getColumnNames(),
-                        source.getBuildingContext().getBuildingOptions().getSchemaCharset()
+                        source.getColumnNames()
                 ),
                 source.getBuildingContext()
         );
+        //,source.getBuildingContext().getBuildingOptions().getSchemaCharset() - пока не используется
     }
 
-    protected String generateKeyName0(String PREFIX, Identifier tableName, Identifier referencedTableName, List<Identifier> columnNames, String schemaCharset) {
+    protected String generateKeyName0(String prefix, Identifier tableName, Identifier referencedTableName, List<Identifier> columnNames) {
         StringBuilder sb = new StringBuilder();
-        sb.append(PREFIX).append("_");
+        sb.append(prefix).append("_");
         sb.append(trimPrefix(tableName.getText())).append("__");
         sb.append(trimPrefix(referencedTableName.getText())).append("__");
         for (Iterator<Identifier> iterator = columnNames.iterator(); iterator.hasNext(); ) {
@@ -76,15 +76,13 @@ public class HumanReadableNamingStrategy extends ImplicitNamingStrategyJpaCompli
         final String name = sb.toString();
         if (name.length() > MAX_PG_KEY_LENGTH) {
             String trimmedName = name.substring(0, MAX_PG_KEY_LENGTH - 2);
-            if (existingKeys.contains(trimmedName)){
-                return trimmedName+counter.incrementAndGet();
-            }
-            else {
+            if (existingKeys.contains(trimmedName)) {
+                return trimmedName + counter.incrementAndGet();
+            } else {
                 existingKeys.add(trimmedName);
                 return trimmedName;
             }
-        }
-        else return name;
+        } else return name;
     }
 
     protected String trimPrefix(@NonNull String name) {

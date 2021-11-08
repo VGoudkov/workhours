@@ -40,7 +40,7 @@ public class Increase extends AbstractEntity {
     /**
      * Период, за который рассчитывается надбавка
      */
-    private IncreasePeriod increasePeriod;
+    private PeriodSize periodSize;
 
 
     /**

@@ -29,7 +29,7 @@ public class MonthlyWorkShifts extends AbstractMonthlyWork {
     private EmployeeIncrease salaryIncrease;
 
     /**
-     * Отработано периодов, которые заявлены в {@link ru.vgoudk.workhours.model.finance.Increase#increasePeriod}
+     * Отработано периодов, которые заявлены в {@link ru.vgoudk.workhours.model.finance.Increase}
      */
     private Integer periods;
 }

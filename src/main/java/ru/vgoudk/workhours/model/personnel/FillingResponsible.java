@@ -8,6 +8,7 @@ import ru.vgoudk.workhours.model.AbstractEntity;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
 
 /**
  * Ответственный за заполнение данных по человеку
@@ -18,7 +19,8 @@ import javax.persistence.Table;
 @Setter
 @NoArgsConstructor
 @SuperBuilder
-public class FillingResponsible extends AbstractEntity {
+public class FillingResponsible extends AbstractEntity implements Serializable {
+    private static final long serialVersionUID = 1L;
     /**
      * Почта, которая используется как login в систему
      */

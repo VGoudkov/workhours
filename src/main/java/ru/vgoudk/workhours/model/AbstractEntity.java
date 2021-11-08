@@ -18,5 +18,5 @@ public abstract class AbstractEntity {
     @SequenceGenerator(name = "ID_GENERATOR", sequenceName = "ID_SEQUENCE", initialValue = 100, allocationSize = 1)
     @Column(name = "id", nullable = false)
     private Long id;
-    private String name;
+    private String description;
 }

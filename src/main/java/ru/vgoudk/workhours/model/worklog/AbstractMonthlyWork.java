@@ -4,11 +4,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
-import ru.vgoudk.workhours.model.AbstractEntity;
+import ru.vgoudk.workhours.model.personnel.FillingResponsible;
 
-import javax.persistence.Entity;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
+import javax.persistence.*;
 import java.time.Month;
 
 /**
@@ -20,7 +18,14 @@ import java.time.Month;
 @Setter
 @NoArgsConstructor
 @SuperBuilder
-public abstract class AbstractMonthlyWork extends AbstractEntity {
+public abstract class AbstractMonthlyWork {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "WORK_ID_GENERATOR")
+    @SequenceGenerator(name = "WORK_ID_GENERATOR", sequenceName = "WORK_ID_SEQUENCE", initialValue = 1000, allocationSize = 1)
+    @Column(name = "id", nullable = false)
+    private Long id;
+
     /**
      * Отработано в месяце
      */
@@ -30,4 +35,9 @@ public abstract class AbstractMonthlyWork extends AbstractEntity {
      * Отработано в году
      */
     private Integer inYear;
+
+    @ManyToOne
+    @JoinColumn(name = "filled_by_fk")
+    private FillingResponsible filledBy;
+
 }
