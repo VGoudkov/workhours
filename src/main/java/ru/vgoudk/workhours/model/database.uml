@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>DATABASE</ID>
+  <OriginalElement>5e7421b6-6ce6-4d21-8ded-caf3fd910074.TABLE:whmgu.public.wh_division</OriginalElement>
+  <nodes>
+    <node x="-99.11594121746066" y="389.7140883977901">5e7421b6-6ce6-4d21-8ded-caf3fd910074.TABLE:whmgu.public.wh_position</node>
+    <node x="759.3057830868544" y="860.6039473329367">5e7421b6-6ce6-4d21-8ded-caf3fd910074.TABLE:whmgu.public.wh_filling_responsible</node>
+    <node x="-317.27063735005726" y="401.3853591160221">5e7421b6-6ce6-4d21-8ded-caf3fd910074.TABLE:whmgu.public.wh_division</node>
+    <node x="-99.11594121746066" y="870.6521005893773">5e7421b6-6ce6-4d21-8ded-caf3fd910074.TABLE:whmgu.public.wh_funds</node>
+    <node x="146.70073664825048" y="329.47513812154705">5e7421b6-6ce6-4d21-8ded-caf3fd910074.TABLE:whmgu.public.wh_employment</node>
+    <node x="759.3057830868544" y="512.6441325966853">5e7421b6-6ce6-4d21-8ded-caf3fd910074.TABLE:whmgu.public.wh_employee</node>
+    <node x="-99.11594121746066" y="627.782458563536">5e7421b6-6ce6-4d21-8ded-caf3fd910074.TABLE:whmgu.public.wh_increase</node>
+    <node x="451.3439226519337" y="373.47513812154705">5e7421b6-6ce6-4d21-8ded-caf3fd910074.TABLE:whmgu.public.wh_monthly_workdays</node>
+    <node x="146.70073664825048" y="629.8135359116025">5e7421b6-6ce6-4d21-8ded-caf3fd910074.TABLE:whmgu.public.wh_employee_increase</node>
+    <node x="759.3057830868543" y="697.624039964811">5e7421b6-6ce6-4d21-8ded-caf3fd910074.TABLE:whmgu.public.wh_filling_group</node>
+    <node x="159.79281767955794" y="130.2845303867403">5e7421b6-6ce6-4d21-8ded-caf3fd910074.TABLE:whmgu.public.wh_status</node>
+    <node x="450.5032598675524" y="629.8135359116025">5e7421b6-6ce6-4d21-8ded-caf3fd910074.TABLE:whmgu.public.wh_monthly_workshifts</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="5e7421b6-6ce6-4d21-8ded-caf3fd910074.TABLE:whmgu.public.wh_filling_group" target="5e7421b6-6ce6-4d21-8ded-caf3fd910074.TABLE:whmgu.public.wh_employee" relationship="REFERENCES">
+      <point x="-8.999999999999886" y="-61.5" />
+      <point x="0.0" y="72.5" />
+    </edge>
+    <edge source="5e7421b6-6ce6-4d21-8ded-caf3fd910074.TABLE:whmgu.public.wh_employment" target="5e7421b6-6ce6-4d21-8ded-caf3fd910074.TABLE:whmgu.public.wh_employee" relationship="REFERENCES">
+      <point x="2.6335174950986584E-4" y="105.49986187845298" />
+      <point x="246.701" y="586.0" />
+      <point x="663.003" y="586.0" />
+      <point x="663.003" y="605.5" />
+      <point x="-83.49978308685434" y="20.355867403314733" />
+    </edge>
+    <edge source="5e7421b6-6ce6-4d21-8ded-caf3fd910074.TABLE:whmgu.public.wh_increase" target="5e7421b6-6ce6-4d21-8ded-caf3fd910074.TABLE:whmgu.public.wh_position" relationship="REFERENCES">
+      <point x="-8.5" y="-83.5" />
+      <point x="0.0" y="61.5" />
+    </edge>
+    <edge source="5e7421b6-6ce6-4d21-8ded-caf3fd910074.TABLE:whmgu.public.wh_monthly_workshifts" target="5e7421b6-6ce6-4d21-8ded-caf3fd910074.TABLE:whmgu.public.wh_employee_increase" relationship="REFERENCES">
+      <point x="-97.5" y="0.0" />
+      <point x="95.0" y="0.0" />
+    </edge>
+    <edge source="5e7421b6-6ce6-4d21-8ded-caf3fd910074.TABLE:whmgu.public.wh_employee_increase" target="5e7421b6-6ce6-4d21-8ded-caf3fd910074.TABLE:whmgu.public.wh_increase" relationship="REFERENCES">
+      <point x="-95.0" y="-2.0310773480664466" />
+      <point x="80.5" y="0.0" />
+    </edge>
+    <edge source="5e7421b6-6ce6-4d21-8ded-caf3fd910074.TABLE:whmgu.public.wh_monthly_workdays" target="5e7421b6-6ce6-4d21-8ded-caf3fd910074.TABLE:whmgu.public.wh_employment" relationship="REFERENCES">
+      <point x="-94.50000000000006" y="-22.0" />
+      <point x="100.0" y="0.0" />
+    </edge>
+    <edge source="5e7421b6-6ce6-4d21-8ded-caf3fd910074.TABLE:whmgu.public.wh_position" target="5e7421b6-6ce6-4d21-8ded-caf3fd910074.TABLE:whmgu.public.wh_division" relationship="REFERENCES">
+      <point x="-72.0" y="-10.328729281768005" />
+      <point x="67.0" y="0.0" />
+    </edge>
+    <edge source="5e7421b6-6ce6-4d21-8ded-caf3fd910074.TABLE:whmgu.public.wh_employee_increase" target="5e7421b6-6ce6-4d21-8ded-caf3fd910074.TABLE:whmgu.public.wh_employee" relationship="REFERENCES">
+      <point x="2.6335174950986584E-4" y="-83.49953591160249" />
+      <point x="241.701" y="586.0" />
+      <point x="663.003" y="586.0" />
+      <point x="663.003" y="605.5" />
+      <point x="-83.49978308685434" y="20.355867403314733" />
+    </edge>
+    <edge source="5e7421b6-6ce6-4d21-8ded-caf3fd910074.TABLE:whmgu.public.wh_increase" target="5e7421b6-6ce6-4d21-8ded-caf3fd910074.TABLE:whmgu.public.wh_funds" relationship="REFERENCES">
+      <point x="-13.5" y="83.5" />
+      <point x="0.0" y="-39.5" />
+    </edge>
+    <edge source="5e7421b6-6ce6-4d21-8ded-caf3fd910074.TABLE:whmgu.public.wh_employment" target="5e7421b6-6ce6-4d21-8ded-caf3fd910074.TABLE:whmgu.public.wh_status" relationship="REFERENCES">
+      <point x="-19.90791896869254" y="-105.5" />
+      <point x="0.0" y="39.5" />
+    </edge>
+    <edge source="5e7421b6-6ce6-4d21-8ded-caf3fd910074.TABLE:whmgu.public.wh_employment" target="5e7421b6-6ce6-4d21-8ded-caf3fd910074.TABLE:whmgu.public.wh_position" relationship="REFERENCES">
+      <point x="-100.0" y="16.23895027624303" />
+      <point x="72.0" y="0.0" />
+    </edge>
+    <edge source="5e7421b6-6ce6-4d21-8ded-caf3fd910074.TABLE:whmgu.public.wh_filling_group" target="5e7421b6-6ce6-4d21-8ded-caf3fd910074.TABLE:whmgu.public.wh_filling_responsible" relationship="REFERENCES">
+      <point x="16.000000000000114" y="61.5" />
+      <point x="0.0" y="-61.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.6783752860411899" showDependencies="false" x="466.01175742171233" y="559.890544535673" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Columns</Category>
+    <Category>Comments</Category>
+    <Category>Key columns</Category>
+    <Category>Virtual foreign keys</Category>
+  </Categories>
+</Diagram>
+
