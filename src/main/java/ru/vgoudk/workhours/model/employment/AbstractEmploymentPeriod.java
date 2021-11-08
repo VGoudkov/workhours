@@ -6,16 +6,13 @@ import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 import ru.vgoudk.workhours.model.AbstractEntity;
 
-import javax.persistence.Entity;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
+import javax.persistence.MappedSuperclass;
 import java.time.LocalDate;
 
 /**
  * Базовый интерфейс для определения периода работы
  */
-@Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@MappedSuperclass
 @Getter
 @Setter
 @NoArgsConstructor

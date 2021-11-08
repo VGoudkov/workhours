@@ -12,8 +12,7 @@ import java.time.Month;
 /**
  * Месячная отработка, бывает разных типов
  */
-@Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@MappedSuperclass
 @Getter
 @Setter
 @NoArgsConstructor
@@ -21,8 +20,7 @@ import java.time.Month;
 public abstract class AbstractMonthlyWork {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "WORK_ID_GENERATOR")
-    @SequenceGenerator(name = "WORK_ID_GENERATOR", sequenceName = "WORK_ID_SEQUENCE", initialValue = 1000, allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
 
