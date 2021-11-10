@@ -1,0 +1,34 @@
+#server:
+#  servlet:
+#    session:
+#      timeout: 30m
+#  port: 8082
+spring:
+#  profiles:
+#    active: dev
+  datasource:
+    # region В этом месте должны подхватываться значения из properties, которые лежат рядом, или из параметров окружения
+    url:
+    username:
+    password:
+    # endregion
+    driver-class-name: org.mariadb.jdbc.Driver
+
+  jpa:
+    generate-ddl: true
+#    generate-ddl: false
+    hibernate:
+#      ddl-auto: none
+      ddl-auto: validate
+      naming:
+        implicit-strategy: ru.vgoudk.workhours.model.HumanReadableNamingStrategy
+    database-platform: org.hibernate.dialect.MariaDB103Dialect
+    properties:
+      hibernate:
+        jdbc:
+          batch_size: 100
+        connection:
+          Charset: utf8
+          characterEncoding: utf8
+          useUnicode: true
+    show-sql: true
