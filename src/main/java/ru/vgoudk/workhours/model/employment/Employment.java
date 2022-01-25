@@ -15,7 +15,7 @@ import javax.persistence.Table;
 import java.math.BigDecimal;
 
 /**
- * Нанятый сотрудник
+ * Работа по основному месту
  */
 @Entity
 @Table(name = "wh_employment")
@@ -23,7 +23,7 @@ import java.math.BigDecimal;
 @Setter
 @NoArgsConstructor
 @SuperBuilder
-public class Employment extends AbstractEmploymentPeriod {
+public class Employment extends AbstractWorkPeriod {
     /**
      * Кто работает
      */

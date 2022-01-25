@@ -8,7 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 /**
- * Статус сотрудника во время работы
+ * <p>Статус сотрудника во время работы</p>
+ * Возможные варианты
  * <ul>
  *     <li>в декрете</li>
  *     <li>болен</li>

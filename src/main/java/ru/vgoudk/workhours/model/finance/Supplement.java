@@ -21,7 +21,7 @@ import java.math.BigDecimal;
 @Setter
 @NoArgsConstructor
 @SuperBuilder
-public class Increase extends AbstractEntity {
+public class Supplement extends AbstractEntity {
     /**
      * Выплачивается из средств
      */

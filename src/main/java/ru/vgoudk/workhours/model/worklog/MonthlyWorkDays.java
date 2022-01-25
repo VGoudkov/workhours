@@ -25,8 +25,8 @@ public class MonthlyWorkDays extends AbstractMonthlyWork {
      * Отработано в должности
      */
     @ManyToOne
-    @JoinColumn(name = "employment_fk")
-    private Employment employment;
+    @JoinColumn(name = "in_employment_fk")
+    private Employment inEmployment;
     /**
      * Отработано дней
      */

@@ -10,14 +10,14 @@ import javax.persistence.MappedSuperclass;
 import java.time.LocalDate;
 
 /**
- * Базовый интерфейс для определения периода работы
+ * Период работы (по основному месту или для получения надбавки
  */
 @MappedSuperclass
 @Getter
 @Setter
 @NoArgsConstructor
 @SuperBuilder
-public abstract class AbstractEmploymentPeriod extends AbstractEntity {
+public abstract class AbstractWorkPeriod extends AbstractEntity {
     /**
      * Дата начала работы (первый день)
      */

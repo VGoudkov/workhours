@@ -13,9 +13,17 @@ import javax.persistence.*;
 @SuperBuilder
 @MappedSuperclass
 public abstract class AbstractEntity {
+    /**
+     * Первичный ключ записи
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
+
+    /**
+     * Описание записи в свободной форме
+     */
+    @Column(name = "description")
     private String description;
 }

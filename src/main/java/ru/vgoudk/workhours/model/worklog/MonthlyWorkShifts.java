@@ -4,12 +4,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
-import ru.vgoudk.workhours.model.employment.EmployeeIncrease;
+import ru.vgoudk.workhours.model.employment.SalarySupplement;
+import ru.vgoudk.workhours.model.finance.Supplement;
 
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * Месячная отработка в сменах (для расчёта надбавок)
@@ -25,11 +23,12 @@ public class MonthlyWorkShifts extends AbstractMonthlyWork {
      * Отработано по надбавке
      */
     @ManyToOne
-    @JoinColumn(name = "salary_increase_fk")
-    private EmployeeIncrease salaryIncrease;
+    @JoinColumn(name = "with_salary_increase_fk")
+    private SalarySupplement withSalaryIncrease;
 
     /**
-     * Отработано периодов, которые заявлены в {@link ru.vgoudk.workhours.model.finance.Increase}
+     * Отработано периодов, которые заявлены в {@link Supplement#getPeriodSize()}
      */
+    @Column(name = "periods")
     private Integer periods;
 }
