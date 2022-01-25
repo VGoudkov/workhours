@@ -23,8 +23,8 @@ public class MonthlyWorkShifts extends AbstractMonthlyWork {
      * Отработано по надбавке
      */
     @ManyToOne
-    @JoinColumn(name = "with_salary_increase_fk")
-    private SalarySupplement withSalaryIncrease;
+    @JoinColumn(name = "with_salary_supplement_fk")
+    private SalarySupplement withSalarySupplement;
 
     /**
      * Отработано периодов, которые заявлены в {@link Supplement#getPeriodSize()}

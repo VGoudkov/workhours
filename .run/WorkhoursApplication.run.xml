@@ -1,10 +1,9 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="WorkhoursApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+  <configuration default="false" name="WorkhoursApplication - aws" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
     <module name="workhours" />
     <option name="SPRING_BOOT_MAIN_CLASS" value="ru.vgoudk.workhours.WorkhoursApplication" />
     <option name="ACTIVE_PROFILES" value="aws" />
     <option name="ALTERNATIVE_JRE_PATH" />
-    <option name="SHORTEN_COMMAND_LINE" value="NONE" />
     <method v="2">
       <option name="Make" enabled="true" />
     </method>

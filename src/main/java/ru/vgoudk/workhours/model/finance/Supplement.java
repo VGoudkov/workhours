@@ -6,10 +6,7 @@ import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 import ru.vgoudk.workhours.model.AbstractEntity;
 
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.math.BigDecimal;
 
 /**
@@ -40,11 +37,13 @@ public class Supplement extends AbstractEntity {
     /**
      * Период, за который рассчитывается надбавка
      */
+    @Column( name = "period_size")
     private PeriodSize periodSize;
 
 
     /**
      * Базовая сумма, которая умножается на количество отработанных периодов
      */
-    private BigDecimal amount;
+    @Column( name = "baseAmount")
+    private BigDecimal baseAmount;
 }
