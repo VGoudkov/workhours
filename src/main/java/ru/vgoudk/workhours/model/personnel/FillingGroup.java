@@ -1,8 +1,6 @@
 package ru.vgoudk.workhours.model.personnel;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
@@ -39,10 +37,10 @@ public class FillingGroup {
     private Employee forEmployee;
 
     @Embeddable
-    @Getter
-    @Setter
+    @Data
     @NoArgsConstructor
-    @SuperBuilder
+    @AllArgsConstructor
+    @Builder
     public static class FillingGroupId implements Serializable {
 
         private static final long serialVersionUID = 1L;

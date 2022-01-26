@@ -19,7 +19,7 @@ spring:
 #    generate-ddl: false
     hibernate:
 #      ddl-auto: none
-      ddl-auto: create
+      ddl-auto: create-drop
       naming:
         implicit-strategy: ru.vgoudk.workhours.model.HumanReadableNamingStrategy
     database-platform: org.hibernate.dialect.MariaDB103Dialect

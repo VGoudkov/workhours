@@ -8,10 +8,8 @@ import lombok.experimental.SuperBuilder;
 import ru.vgoudk.workhours.model.finance.Supplement;
 import ru.vgoudk.workhours.model.personnel.Employee;
 
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 /**
  * Работа с получением надбавки
@@ -22,18 +20,20 @@ import javax.persistence.Table;
 @Setter
 @NoArgsConstructor
 @SuperBuilder
+//TODO: Уточнить у Аллы, может ли быть два раза одна и та же надбавка одному человеку.
+//  если нет - то тут должен быть @EmbeddedId
 public class SalarySupplement extends AbstractWorkPeriod {
     /**
      * Кому надбавка
      */
-    @ManyToOne
+    @ManyToOne( fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE}, optional = false)
     @JoinColumn(name = "for_employee_fk")
     private Employee forEmployee;
 
     /**
      * Какая надбавка, т.е. как её рассчитывать исходя из количества отработанных смен ({@link ru.vgoudk.workhours.model.worklog.MonthlyWorkShifts}
      */
-    @ManyToOne
+    @ManyToOne( fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE}, optional = false)
     @JoinColumn(name = "increase_fk")
     private Supplement supplement;
 }
