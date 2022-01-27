@@ -26,4 +26,9 @@ public abstract class AbstractEntity {
      */
     @Column(name = "description")
     private String description;
+
+    @Override
+    public String toString() {
+        return getClass().getSimpleName()+"("+id+", \""+description+"\")";
+    }
 }
