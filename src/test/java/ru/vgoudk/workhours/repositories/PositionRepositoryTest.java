@@ -2,17 +2,18 @@ package ru.vgoudk.workhours.repositories;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.jdbc.Sql;
+import org.springframework.transaction.annotation.Transactional;
+import ru.vgoudk.workhours.AbstractSpringBootTest;
 import ru.vgoudk.workhours.model.finance.Division;
 import ru.vgoudk.workhours.model.finance.Position;
 
 import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 
-@DataJpaTest
-@ActiveProfiles("test")
-class PositionRepositoryTest {
+
+class PositionRepositoryTest extends AbstractSpringBootTest {
 
     @Autowired
     PositionRepository positionRepository;
@@ -21,7 +22,7 @@ class PositionRepositoryTest {
     DivisionRepository divisionRepository;
 
     @Test
-    public void shouldCreateDivisionWhenSavingPosition() throws Exception {
+    void shouldCreateDivisionWhenSavingPosition() throws Exception {
         var divison = Division.builder()
                 .description("Division #1")
                 .build();
@@ -36,9 +37,10 @@ class PositionRepositoryTest {
     }
 
     @Test
-    @Sql("/create-position.sql")
-    public void shouldLoadDivision() throws Exception {
-        var loadedDivison = divisionRepository.findAll().get(0);
-        assertThat(loadedDivison.getUsedInPositions()).isNotEmpty();
+    @Transactional
+    @Sql("/sql/create-position.sql")
+    void shouldLoadDivision() throws Exception {
+        var loadedDivison = divisionRepository.findById(100L).orElseThrow();
+        assertThat(loadedDivison.getUsedInPositions().size()).isEqualTo(2);
     }
 }
