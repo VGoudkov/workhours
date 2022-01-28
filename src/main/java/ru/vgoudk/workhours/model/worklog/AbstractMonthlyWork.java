@@ -6,11 +6,11 @@ import lombok.NonNull;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 import ru.vgoudk.workhours.model.AbstractEntity;
+import ru.vgoudk.workhours.model.finance.SalaryPeriod;
 import ru.vgoudk.workhours.model.personnel.FillingResponsible;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.time.Month;
 
 /**
  * Месячная отработка, бывает разных типов
@@ -21,21 +21,13 @@ import java.time.Month;
 @NoArgsConstructor
 @SuperBuilder
 public abstract class AbstractMonthlyWork extends AbstractEntity {
-
+    private static final long serialVersionUID = 1L;
     /**
-     * Отработано в месяце
+     * Отработано в расчётном периоде
      */
-    @NonNull
-    @Enumerated(EnumType.STRING)
-    @Column(name = "in_month")
-    private Month inMonth;
-
-    /**
-     * Отработано в году
-     */
-    @NonNull
-    @Column(name = "in_year")
-    private Integer inYear;
+    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @JoinColumn(name = "in_period_fk")
+    private SalaryPeriod inPeriod;
 
     /**
      * Кем заполнено
