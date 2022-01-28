@@ -6,7 +6,6 @@ import lombok.NonNull;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 import ru.vgoudk.workhours.model.AbstractEntity;
-import ru.vgoudk.workhours.model.finance.SalaryPeriod;
 import ru.vgoudk.workhours.model.personnel.FillingResponsible;
 
 import javax.persistence.*;

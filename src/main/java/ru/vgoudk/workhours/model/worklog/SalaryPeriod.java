@@ -1,4 +1,4 @@
-package ru.vgoudk.workhours.model.finance;
+package ru.vgoudk.workhours.model.worklog;
 
 import lombok.*;
 import ru.vgoudk.workhours.model.AbstractEntity;
@@ -31,4 +31,11 @@ public class SalaryPeriod extends AbstractEntity {
     @NonNull
     @Column(name = "year")
     private Integer year;
+
+
+    /**
+     * Период является закрытым для добавления отработанных дней
+     */
+    @Column(name = "is_locked")
+    private Boolean isLocked = false;
 }

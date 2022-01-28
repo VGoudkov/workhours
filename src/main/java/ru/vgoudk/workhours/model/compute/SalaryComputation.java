@@ -2,7 +2,7 @@ package ru.vgoudk.workhours.model.compute;
 
 import lombok.*;
 import ru.vgoudk.workhours.model.AbstractEntity;
-import ru.vgoudk.workhours.model.finance.SalaryPeriod;
+import ru.vgoudk.workhours.model.worklog.SalaryPeriod;
 
 import javax.persistence.*;
 import java.time.LocalDate;
