@@ -19,6 +19,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @SuperBuilder
 public class MonthlyWorkShifts extends AbstractMonthlyWork {
+    private static final long serialVersionUID = 1L;
     /**
      * Отработано по надбавке
      */

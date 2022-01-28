@@ -16,6 +16,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @SuperBuilder
 public class FillingGroup {
+    private static final long serialVersionUID = 1L;
 
     @EmbeddedId
     private FillingGroupId id;

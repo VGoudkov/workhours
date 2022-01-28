@@ -1,6 +1,8 @@
 package ru.vgoudk.workhours.model.personnel;
 
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 import ru.vgoudk.workhours.model.AbstractEntity;
 
@@ -18,7 +20,10 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "wh_status")
+@Getter
+@Setter
 @NoArgsConstructor
 @SuperBuilder
 public class Status extends AbstractEntity {
+    private static final long serialVersionUID = 1L;
 }

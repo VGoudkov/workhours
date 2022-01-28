@@ -20,7 +20,7 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @SuperBuilder
 public class Supplement extends AbstractEntity {
-
+    private static final long serialVersionUID = 1L;
     /**
      * Выплачивается из средств
      */

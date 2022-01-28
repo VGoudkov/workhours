@@ -21,6 +21,7 @@ import javax.persistence.Table;
 @NoArgsConstructor
 @SuperBuilder
 public class MonthlyWorkDays extends AbstractMonthlyWork {
+    private static final long serialVersionUID = 1L;
     /**
      * Отработано в должности
      */

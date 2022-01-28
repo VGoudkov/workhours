@@ -13,6 +13,7 @@ import javax.persistence.*;
 @SuperBuilder
 @MappedSuperclass
 public abstract class AbstractEntity {
+    private static final long serialVersionUID = 1L;
     /**
      * Первичный ключ записи
      */
@@ -29,6 +30,6 @@ public abstract class AbstractEntity {
 
     @Override
     public String toString() {
-        return getClass().getSimpleName()+"("+id+", \""+description+"\")";
+        return getClass().getSimpleName() + "(" + id + ", \"" + description + "\")";
     }
 }

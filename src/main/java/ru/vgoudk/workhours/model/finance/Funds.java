@@ -8,7 +8,6 @@ import ru.vgoudk.workhours.model.AbstractEntity;
 import ru.vgoudk.workhours.model.RoleLink;
 
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import java.util.ArrayList;

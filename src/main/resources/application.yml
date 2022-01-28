@@ -4,8 +4,8 @@
 #      timeout: 30m
 #  port: 8082
 spring:
-#  profiles:
-#    active: dev
+  #  profiles:
+  #    active: dev
   datasource:
     # region В этом месте должны подхватываться значения из properties, которые лежат рядом, или из параметров окружения
     url:
@@ -16,10 +16,10 @@ spring:
 
   jpa:
     generate-ddl: true
-#    generate-ddl: false
+    #    generate-ddl: false
     hibernate:
-#      ddl-auto: none
-      ddl-auto: create-drop
+      #      ddl-auto: none
+      ddl-auto: update
       naming:
         implicit-strategy: ru.vgoudk.workhours.model.HumanReadableNamingStrategy
     database-platform: org.hibernate.dialect.MariaDB103Dialect

@@ -9,7 +9,6 @@ import ru.vgoudk.workhours.model.finance.Supplement;
 import ru.vgoudk.workhours.model.personnel.Employee;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 
 /**
  * Работа с получением надбавки
@@ -26,14 +25,14 @@ public class SalarySupplement extends AbstractWorkPeriod {
     /**
      * Кому надбавка
      */
-    @ManyToOne( fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE}, optional = false)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE}, optional = false)
     @JoinColumn(name = "for_employee_fk")
     private Employee forEmployee;
 
     /**
      * Какая надбавка, т.е. как её рассчитывать исходя из количества отработанных смен ({@link ru.vgoudk.workhours.model.worklog.MonthlyWorkShifts}
      */
-    @ManyToOne( fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE}, optional = false)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE}, optional = false)
     @JoinColumn(name = "increase_fk")
     private Supplement supplement;
 }
