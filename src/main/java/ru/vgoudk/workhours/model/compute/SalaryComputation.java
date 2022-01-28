@@ -25,15 +25,14 @@ public class SalaryComputation extends AbstractEntity {
     /**
      * Список строк расчёта зарплаты, принадлежащей к данному расчёту
      */
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn
+    @OneToMany(mappedBy = "forSalaryComputation", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<SalaryComputationRow> salaryComputationRows = new ArrayList<>();
 
     /**
      * Период, для которого проводится данный расчёт
      */
     @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-    @JoinColumn(name = "salary_period_id")
+    @JoinColumn(name = "salary_period_fk")
     private SalaryPeriod salaryPeriod;
 
     /**

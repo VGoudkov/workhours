@@ -26,8 +26,8 @@ public abstract class AbstractMonthlyWork extends AbstractEntity {
      * Отработано в расчётном периоде
      */
     @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-    @JoinColumn(name = "in_period_fk")
-    private SalaryPeriod inPeriod;
+    @JoinColumn(name = "in_salary_period_fk")
+    private SalaryPeriod inSalaryPeriod;
 
     /**
      * Кем заполнено
