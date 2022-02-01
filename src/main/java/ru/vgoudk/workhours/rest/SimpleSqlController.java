@@ -18,8 +18,8 @@ import java.util.stream.Collectors;
 public class SimpleSqlController {
 
     private final Random random = new Random(42);
-    PositionRepository positionRepository;
-    DivisionRepository divisionRepository;
+    final PositionRepository positionRepository;
+    final DivisionRepository divisionRepository;
 
     public SimpleSqlController(
             PositionRepository positionRepository,

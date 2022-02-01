@@ -20,13 +20,13 @@ class PositionRepositoryTest extends AbstractSpringBootTest {
     DivisionRepository divisionRepository;
 
     @Test
-    void shouldCreateDivisionWhenSavingPosition() throws Exception {
-        var divison = Division.builder()
+    void shouldCreateDivisionWhenSavingPosition() {
+        var division = Division.builder()
                 .description("Division #1")
                 .build();
 
         var position = Position.builder()
-                .atDivision(divison)
+                .atDivision(division)
                 .description("Position #11")
                 .build();
 
@@ -37,8 +37,8 @@ class PositionRepositoryTest extends AbstractSpringBootTest {
     @Test
     @Transactional
     @Sql("/sql/create-position.sql")
-    void shouldLoadDivision() throws Exception {
-        var loadedDivison = divisionRepository.findById(100L).orElseThrow();
-        assertThat(loadedDivison.getUsedInPositions().size()).isEqualTo(2);
+    void shouldLoadDivision() {
+        var loadedDivision = divisionRepository.findById(100L).orElseThrow();
+        assertThat(loadedDivision.getUsedInPositions().size()).isEqualTo(2);
     }
 }
