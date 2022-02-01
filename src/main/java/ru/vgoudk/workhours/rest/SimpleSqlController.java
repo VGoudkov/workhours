@@ -1,5 +1,6 @@
 package ru.vgoudk.workhours.rest;
 
+import lombok.extern.log4j.Log4j2;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +16,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("doSQL")
+@Log4j2
 public class SimpleSqlController {
 
     private final Random random = new Random(42);
@@ -59,6 +61,7 @@ public class SimpleSqlController {
 
     @GetMapping(path = "/{id}", produces = "application/json")
     public Division getDivision(@PathVariable int id) {
+        log.warn("/{id} requested with param {}", id);
         return null;
     }
 
