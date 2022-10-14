@@ -1,17 +1,9 @@
-#server:
-#  servlet:
-#    session:
-#      timeout: 30m
-#  port: 8082
 spring:
-  #  profiles:
-  #    active: dev
   datasource:
-    # region В этом месте должны подхватываться значения из properties, которые лежат рядом, или из параметров окружения
-    url: jdbc:h2:database/whmgu;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;DEFAULT_NULL_ORDERING=HIGH
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:./db/whmgu;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;DEFAULT_NULL_ORDERING=HIGH
     username: sa
     password:
-    # endregion
   jpa:
     database-platform: ru.vgoudk.workhours.repositories.ImprovedH2Dialect
     hibernate:

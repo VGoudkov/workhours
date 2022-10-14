@@ -33,7 +33,7 @@ public class SalaryPeriod extends AbstractEntity {
      */
     @NonNull
     @Enumerated(EnumType.STRING)
-    @Column(name = "month", nullable = false)
+    @Column(name = "period_month", nullable = false)
     private Month month;
 
     /**
@@ -42,7 +42,7 @@ public class SalaryPeriod extends AbstractEntity {
     @NonNull
     @Min(2020)
     @Max(2050)
-    @Column(name = "year", nullable = false)
+    @Column(name = "period_year", nullable = false)
     private Integer year;
 
 
