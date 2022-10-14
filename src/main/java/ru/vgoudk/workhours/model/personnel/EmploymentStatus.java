@@ -19,11 +19,11 @@ import javax.persistence.Table;
  * </ul>
  */
 @Entity
-@Table(name = "wh_status")
+@Table(name = "wh_employment_status")
 @Getter
 @Setter
 @NoArgsConstructor
 @SuperBuilder
-public class Status extends AbstractEntity {
+public class EmploymentStatus extends AbstractEntity {
     private static final long serialVersionUID = 1L;
 }

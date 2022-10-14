@@ -27,6 +27,6 @@ public class Funds extends AbstractEntity {
      * В каких надбавках используется данный тип средств
      */
     @RoleLink
-    @OneToMany(mappedBy = "fromFunds")
+    @OneToMany(mappedBy = "funds")
     private List<Supplement> usedInSupplements = new ArrayList<>();
 }

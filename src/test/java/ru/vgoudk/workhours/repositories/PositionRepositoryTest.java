@@ -26,7 +26,7 @@ class PositionRepositoryTest extends AbstractSpringBootTest {
                 .build();
 
         var position = Position.builder()
-                .atDivision(division)
+                .division(division)
                 .description("Position #11")
                 .build();
 
@@ -39,6 +39,6 @@ class PositionRepositoryTest extends AbstractSpringBootTest {
     @Sql("/sql/create-position.sql")
     void shouldLoadDivision() {
         var loadedDivision = divisionRepository.findById(100L).orElseThrow();
-        assertThat(loadedDivision.getUsedInPositions().size()).isEqualTo(2);
+        assertThat(loadedDivision.getUsedInPositions()).hasSize(2);
     }
 }

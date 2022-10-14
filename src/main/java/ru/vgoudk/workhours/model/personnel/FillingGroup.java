@@ -1,9 +1,22 @@
 package ru.vgoudk.workhours.model.personnel;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 
-import javax.persistence.*;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
+import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.MapsId;
+import javax.persistence.Table;
 import java.io.Serializable;
 
 /**
@@ -24,7 +37,7 @@ public class FillingGroup {
     /**
      * Ответственный за заполнение
      */
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, optional = false)
     @JoinColumn(name = "filling_responsible_fk")
     @MapsId(value = "fillingResponsible")
     private FillingResponsible fillingResponsible;
@@ -32,10 +45,10 @@ public class FillingGroup {
     /**
      * Сотрудник, для которого нужно заполнять
      */
-    @ManyToOne
-    @JoinColumn(name = "for_employee_fk")
-    @MapsId(value = "forEmployee")
-    private Employee forEmployee;
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, optional = false)
+    @JoinColumn(name = "employee_fk")
+    @MapsId(value = "employee")
+    private Employee employee;
 
     @Embeddable
     @Data
@@ -49,11 +62,13 @@ public class FillingGroup {
         /**
          * Ответственный за заполнение
          */
-        private Long fillingResponsible;
+        @Column(name = "filling_responsible_fk")
+        private Integer fillingResponsible;
 
         /**
          * Сотрудник, для которого нужно заполнять
          */
-        private Long forEmployee;
+        @Column(name = "employee_fk")
+        private Integer employee;
     }
 }

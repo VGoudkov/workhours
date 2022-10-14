@@ -1,5 +1,6 @@
 package ru.vgoudk.workhours.model.finance;
 
+import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -31,7 +32,8 @@ public class Division extends AbstractEntity {
      * Коллекция должностей, в которой используется данное подразделение
      */
     @RoleLink
-    @OneToMany(mappedBy = "atDivision")
+    @OneToMany(mappedBy = "division")
+    @Setter(AccessLevel.NONE)
     @Builder.Default
     private List<Position> usedInPositions = new ArrayList<>();
 }

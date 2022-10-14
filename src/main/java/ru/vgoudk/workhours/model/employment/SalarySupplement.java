@@ -3,12 +3,18 @@ package ru.vgoudk.workhours.model.employment;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 import ru.vgoudk.workhours.model.finance.Supplement;
 import ru.vgoudk.workhours.model.personnel.Employee;
+import ru.vgoudk.workhours.model.worklog.MonthlySupplement;
 
-import javax.persistence.*;
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 /**
  * Работа с получением надбавки
@@ -25,14 +31,16 @@ public class SalarySupplement extends AbstractWorkPeriod {
     /**
      * Кому надбавка
      */
-    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE}, optional = false)
-    @JoinColumn(name = "for_employee_fk")
-    private Employee forEmployee;
+    @NonNull
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, optional = false)
+    @JoinColumn(name = "employee_fk")
+    private Employee employee;
 
     /**
-     * Какая надбавка, т.е. как её рассчитывать исходя из количества отработанных смен ({@link ru.vgoudk.workhours.model.worklog.MonthlyWorkShifts}
+     * Какая надбавка, т.е. как её рассчитывать исходя из количества отработанных смен ({@link MonthlySupplement}
      */
-    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE}, optional = false)
-    @JoinColumn(name = "increase_fk")
+    @NonNull
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, optional = false)
+    @JoinColumn(name = "supplement_fk")
     private Supplement supplement;
 }

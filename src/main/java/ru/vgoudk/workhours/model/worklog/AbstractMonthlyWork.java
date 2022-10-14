@@ -8,7 +8,11 @@ import lombok.experimental.SuperBuilder;
 import ru.vgoudk.workhours.model.AbstractEntity;
 import ru.vgoudk.workhours.model.personnel.FillingResponsible;
 
-import javax.persistence.*;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.MappedSuperclass;
 import java.time.LocalDateTime;
 
 /**
@@ -24,30 +28,30 @@ public abstract class AbstractMonthlyWork extends AbstractEntity {
     /**
      * Отработано в расчётном периоде
      */
-    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-    @JoinColumn(name = "in_salary_period_fk")
-    private SalaryPeriod inSalaryPeriod;
+    @NonNull
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, optional = false)
+    @JoinColumn(name = "salary_period_fk")
+    private SalaryPeriod salaryPeriod;
 
     /**
      * Кем заполнено
      */
     @NonNull
-    @ManyToOne
-    @JoinColumn(name = "filled_by_fk")
-    private FillingResponsible filledBy;
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, optional = false)
+    @JoinColumn(name = "filling_responsible_fk")
+    private FillingResponsible fillingResponsible;
 
     /**
      * Заполнено с IP адреса
      */
     @NonNull
-    @Column(name = "filled_from_ip", length = 60)
-    private String filledFromIp;
+    @Column(name = "operation_ip", length = 60, nullable = false)
+    private String operationIp;
 
     /**
      * Дата заполнения
      */
     @NonNull
-    @Column(name = "filled_at")
-    private LocalDateTime filledAt;
-
+    @Column(name = "operation_date_time", nullable = false)
+    private LocalDateTime operation_date_time;
 }

@@ -5,7 +5,8 @@ import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
-import ru.vgoudk.workhours.model.employment.Employment;
+import ru.vgoudk.workhours.model.employment.SalarySupplement;
+import ru.vgoudk.workhours.model.finance.Supplement;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -15,28 +16,29 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
- * Месячная отработка в днях (для расчёта зарплаты)
+ * Месячная отработка в сменах (для расчёта надбавок)
  */
 @Entity
-@Table(name = "wh_monthly_workdays")
+@Table(name = "wh_monthly_supplement")
 @Getter
 @Setter
 @NoArgsConstructor
 @SuperBuilder
-public class MonthlyWorkDays extends AbstractMonthlyWork {
+public class MonthlySupplement extends AbstractMonthlyWork {
     private static final long serialVersionUID = 1L;
+
     /**
-     * Отработано в должности
+     * Отработано по надбавке
      */
     @NonNull
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, optional = false)
-    @JoinColumn(name = "employment_fk")
-    private Employment employment;
+    @JoinColumn(name = "salary_supplement_fk")
+    private SalarySupplement salarySupplement;
 
     /**
-     * Отработано дней
+     * Отработано периодов, которые заявлены в {@link Supplement#getSupplementPeriodSize()}
      */
     @NonNull
-    @Column(name = "workdays", nullable = false)
-    private Integer workdays;
+    @Column(name = "periods", nullable = false)
+    private Integer periods;
 }
