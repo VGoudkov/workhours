@@ -8,6 +8,8 @@ import ru.vgoudk.workhours.AbstractSpringBootTest;
 import ru.vgoudk.workhours.model.finance.Division;
 import ru.vgoudk.workhours.model.finance.Position;
 
+import java.math.BigDecimal;
+
 import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 
 
@@ -28,6 +30,7 @@ class PositionRepositoryTest extends AbstractSpringBootTest {
         var position = Position.builder()
                 .division(division)
                 .description("Position #11")
+                .salary(BigDecimal.valueOf(100000.00))
                 .build();
 
         positionRepository.save(position);
@@ -38,7 +41,7 @@ class PositionRepositoryTest extends AbstractSpringBootTest {
     @Transactional
     @Sql("/sql/create-position.sql")
     void shouldLoadDivision() {
-        var loadedDivision = divisionRepository.findById(100L).orElseThrow();
+        var loadedDivision = divisionRepository.findById(100).orElseThrow();
         assertThat(loadedDivision.getUsedInPositions()).hasSize(2);
     }
 }

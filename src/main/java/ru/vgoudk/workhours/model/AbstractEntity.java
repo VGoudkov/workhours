@@ -2,7 +2,6 @@ package ru.vgoudk.workhours.model;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 import org.springframework.lang.Nullable;
@@ -24,7 +23,7 @@ public abstract class AbstractEntity {
      * Первичный ключ записи
      */
     @Id
-    @NonNull
+    @Nullable
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Integer id;

@@ -45,7 +45,7 @@ public class SimpleSqlController {
         }
         Position position = Position.builder()
                 .description("Position " + 1000 + random.nextInt(100))
-                .atDivision(division)
+                .division(division)
                 .build();
         positionRepository.saveAndFlush(position);
 
@@ -66,7 +66,7 @@ public class SimpleSqlController {
     }
 
     @GetMapping(path = "delete/{id}", produces = "text/plain")
-    public String deleteById(@PathVariable Long id) {
+    public String deleteById(@PathVariable Integer id) {
         positionRepository.deleteById(id);
         return "Deleted";
     }

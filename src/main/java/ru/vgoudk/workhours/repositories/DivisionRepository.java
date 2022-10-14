@@ -6,6 +6,6 @@ import ru.vgoudk.workhours.model.finance.Division;
 
 import java.util.List;
 
-public interface DivisionRepository extends JpaRepository<Division, Long> {
+public interface DivisionRepository extends JpaRepository<Division, Integer> {
     List<Division> findByDescriptionContains(@NonNull String description);
 }
