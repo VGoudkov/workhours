@@ -8,27 +8,17 @@ spring:
   #    active: dev
   datasource:
     # region В этом месте должны подхватываться значения из properties, которые лежат рядом, или из параметров окружения
-    url:
-    username:
+    url: jdbc:h2:database/whmgu;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;DEFAULT_NULL_ORDERING=HIGH
+    username: sa
     password:
     # endregion
-    driver-class-name: org.mariadb.jdbc.Driver
-
   jpa:
-    generate-ddl: true
-    #    generate-ddl: false
+    database-platform: ru.vgoudk.workhours.repositories.ImprovedH2Dialect
     hibernate:
-      #      ddl-auto: none
       ddl-auto: update
-      naming:
-        implicit-strategy: ru.vgoudk.workhours.model.HumanReadableNamingStrategy
-    database-platform: org.hibernate.dialect.MariaDB103Dialect
-    properties:
-      hibernate:
-        jdbc:
-          batch_size: 100
-        connection:
-          Charset: utf8
-          characterEncoding: utf8
-          useUnicode: true
-    show-sql: true
+        #naming:
+      #implicit-strategy: ru.vgoudk.workhours.model.HumanReadableNamingStrategy
+  h2:
+    console:
+      enabled: true
+      path: /h2

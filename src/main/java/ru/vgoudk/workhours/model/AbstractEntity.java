@@ -23,7 +23,6 @@ public abstract class AbstractEntity {
      * Первичный ключ записи
      */
     @Id
-    @Nullable
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Integer id;
