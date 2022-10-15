@@ -1,16 +1,11 @@
 spring:
   datasource:
-    driver-class-name: org.h2.Driver
-    url: jdbc:h2:./db/whmgu;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;DEFAULT_NULL_ORDERING=HIGH
-    username: sa
-    password:
+    url: jdbc:postgresql://localhost:5432/whmgu
+    username: whmgu
+    password: A123456b
   jpa:
-    database-platform: ru.vgoudk.workhours.repositories.ImprovedH2Dialect
+    database-platform: org.hibernate.dialect.PostgreSQL10Dialect
     hibernate:
       ddl-auto: update
         #naming:
       #implicit-strategy: ru.vgoudk.workhours.model.HumanReadableNamingStrategy
-  h2:
-    console:
-      enabled: true
-      path: /h2
