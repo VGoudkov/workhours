@@ -11,6 +11,7 @@ import ru.vgoudk.workhours.model.AbstractEntity;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
@@ -32,6 +33,7 @@ public class FillingResponsible extends AbstractEntity implements Serializable {
      * Если ответственный за заполнение является сотрудником
      */
     @Nullable
+    @JoinColumn( name = "employee_fk")
     @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, optional = true)
     private Employee employee;
 

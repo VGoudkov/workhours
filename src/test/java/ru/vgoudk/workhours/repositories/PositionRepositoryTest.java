@@ -30,7 +30,6 @@ class PositionRepositoryTest extends AbstractSpringBootTest {
         var position = Position.builder()
                 .division(division)
                 .description("Position #11")
-                .salary(BigDecimal.valueOf(100000.00))
                 .build();
 
         positionRepository.save(position);
